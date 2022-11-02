@@ -10,3 +10,10 @@ export const formatJSONResponse = (response: Record<string, unknown>) => {
     body: JSON.stringify(response)
   }
 }
+
+export const errorResponse = (statusCode, response: Error) => {
+  return {
+    statusCode,
+    body: JSON.stringify(response.message)
+  }
+}
